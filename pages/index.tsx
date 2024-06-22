@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
         <h1 className="text-4xl text-center text-black">
           Chuck Norris doesn't welcome you.
@@ -23,21 +23,21 @@ export default function Home() {
       <div className="grid-cols-3 grid mb-32 lg:max-w-96 lg:w-96 mb-0 space-x-4">
         <Button
           onClick={() =>
-            router.push({ pathname: "/joke", query: { type: "random" } })
+            router.push('/randomJoke', '/joke')
           }
         >
           Random
         </Button>
         <Button
           onClick={() =>
-            router.push({ pathname: "/joke", query: { type: "category" } })
+            router.push('/categoryJoke', '/joke')
           }
         >
           By category
         </Button>
         <Button
           onClick={() =>
-            router.push({ pathname: "/joke", query: { type: "search" } })
+            router.push('/searchJoke', '/joke')
           }
         >
           Free search

@@ -21,7 +21,7 @@ import {
   }: SelectCategoryProps) {
     return (
       <Select {...props}>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className={`w-[180px]`}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
