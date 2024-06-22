@@ -9,6 +9,9 @@ export const typeDefs = gql`
   }
 
   type Query {
-    joke: Joke
+    randomJoke: Joke
+    searchJokes(query: String!): [Joke]
+    allCategories: [String]
+    searchByCategory(category: String!): Joke
   }
 `;
