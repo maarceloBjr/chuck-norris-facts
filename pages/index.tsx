@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
-  
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
@@ -36,7 +35,13 @@ export default function Home() {
         >
           By category
         </Button>
-        <Button>Free search</Button>
+        <Button
+          onClick={() =>
+            router.push({ pathname: "/joke", query: { type: "search" } })
+          }
+        >
+          Free search
+        </Button>
       </div>
     </main>
   );
