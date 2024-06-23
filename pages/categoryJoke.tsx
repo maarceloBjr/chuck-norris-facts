@@ -54,16 +54,13 @@ export default function JokePage() {
   if (loading || categoryLoading) return <Loading />;
   if (called && categoryLoading) return <Loading />;
 
-  if (error || categoryError)
-    return <p>Error: {(error || categoryError)?.message}</p>;
-
   const handleFirstClick = () => {
     fetchCategoryJokes({ variables: { category } });
     setClicked(true);
   };
 
-  const handleMoreClicks = async () => {
-    await categoryRefetch({ category });
+  const handleMoreClicks = () => {
+    categoryRefetch({ category });
   };
 
   return (
@@ -80,8 +77,12 @@ export default function JokePage() {
         value={category}
       />
       <div className="w-5/6 h-80">
-        {clicked && (
+        {clicked && categoryData && called ? (
           <h1 className="text-2xl text-center text-black">{lastJoke}</h1>
+        ) : (
+          <h1 className="text-2xl text-center">
+            {categoryError?.graphQLErrors[0].message}
+          </h1>
         )}
       </div>
       <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 mb-0 space-x-4">
