@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 
-export default function JokePage() {
+export default function RandomJoke() {
   const router = useRouter();
 
   const JOKE_QUERY = gql`

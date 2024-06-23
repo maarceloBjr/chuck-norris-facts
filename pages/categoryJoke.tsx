@@ -5,7 +5,7 @@ import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-export default function JokePage() {
+export default function CategoryJoke() {
   const [category, setCategory] = useState("");
   const [clicked, setClicked] = useState(false);
   const [lastJoke, setLastJoke] = useState("");

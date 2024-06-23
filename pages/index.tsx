@@ -23,13 +23,13 @@ export default function Home() {
           What type of fact are you looking for?
         </h1>
         <div className="grid-cols-3 grid mb-32 lg:max-w-full mt-12 space-x-4">
-          <Button onClick={() => router.push("/randomJoke", "/fact")}>
+          <Button onClick={() => router.push("/randomJoke")}>
             Random
           </Button>
-          <Button onClick={() => router.push("/categoryJoke", "/fact")}>
+          <Button onClick={() => router.push("/categoryJoke")}>
             By category
           </Button>
-          <Button onClick={() => router.push("/searchJoke", "/fact")}>
+          <Button onClick={() => router.push("/searchJoke")}>
             Free search
           </Button>
         </div>
