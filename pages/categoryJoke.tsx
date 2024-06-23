@@ -1,8 +1,7 @@
 import { Loading } from "@/components/custom/Loading";
 import { SelectCategory } from "@/components/custom/Select";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { NetworkStatus, gql, useQuery, useLazyQuery } from "@apollo/client";
+import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
@@ -10,8 +9,6 @@ export default function JokePage() {
   const [category, setCategory] = useState("");
   const [clicked, setClicked] = useState(false);
   const [lastJoke, setLastJoke] = useState("");
-  const [query, setQuery] = useState("");
-  const [searchedJokes, setSearchedJokes] = useState([]);
 
   const router = useRouter();
 
@@ -29,12 +26,9 @@ export default function JokePage() {
     }
   `;
 
-  const { data, error, loading, refetch, networkStatus } = useQuery(
-    JOKE_QUERY,
-    {
-      notifyOnNetworkStatusChange: true,
-    }
-  );
+  const { data, error, loading } = useQuery(JOKE_QUERY, {
+    notifyOnNetworkStatusChange: true,
+  });
 
   const [
     fetchCategoryJokes,
@@ -84,7 +78,6 @@ export default function JokePage() {
           setCategory(value);
         }}
         value={category}
-        // bgColour="bg-orange-50"
       />
       <div className="w-5/6 h-80">
         {clicked && (
@@ -93,11 +86,10 @@ export default function JokePage() {
       </div>
       <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 mb-0 space-x-4">
         <Button
-        variant="secondary"
+          variant="secondary"
           onClick={() => {
             setClicked(false);
             router.back();
-            // categoryRefetch();
           }}
         >
           Go back

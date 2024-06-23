@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -8,7 +6,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className=''>
+      <div className="">
         <h1 className="text-4xl text-center text-black">
           Chuck Norris doesn't welcome you.
         </h1>

@@ -1,17 +1,13 @@
 import { Loading } from "@/components/custom/Loading";
-import { SelectCategory } from "@/components/custom/Select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { NetworkStatus, gql, useQuery, useLazyQuery } from "@apollo/client";
+import { gql, useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function JokePage() {
-  const [category, setCategory] = useState("");
   const [clicked, setClicked] = useState(false);
-  const [lastJoke, setLastJoke] = useState("");
   const [query, setQuery] = useState("");
-  const [searchedJokes, setSearchedJokes] = useState([]);
 
   const router = useRouter();
 

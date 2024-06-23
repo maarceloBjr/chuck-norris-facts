@@ -1,10 +1,7 @@
 import { Loading } from "@/components/custom/Loading";
-import { SelectCategory } from "@/components/custom/Select";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { NetworkStatus, gql, useQuery, useLazyQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
 
 export default function JokePage() {
   const router = useRouter();
@@ -17,12 +14,9 @@ export default function JokePage() {
     }
   `;
 
-  const { data, error, loading, refetch, networkStatus } = useQuery(
-    JOKE_QUERY,
-    {
-      notifyOnNetworkStatusChange: true,
-    }
-  );
+  const { data, error, loading, refetch } = useQuery(JOKE_QUERY, {
+    notifyOnNetworkStatusChange: true,
+  });
 
   if (loading) return <Loading />;
 
