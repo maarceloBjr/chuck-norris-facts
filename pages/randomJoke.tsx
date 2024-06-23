@@ -34,7 +34,7 @@ export default function JokePage() {
         Random Chuck Norris Fact
       </h1>
       <div className="w-5/6 h-80">
-        <h1 className="text-2xl text-center text-black">
+        <h1 className="text-2xl text-center text-black mt-12">
           {data.randomJoke.value}
         </h1>
       </div>
