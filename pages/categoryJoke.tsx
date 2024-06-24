@@ -65,7 +65,7 @@ export default function CategoryJoke() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-2xl text-center text-black">
+      <h1 className="text-2xl text-center">
         Select the category you want to see a joke from
       </h1>
       <SelectCategory
@@ -78,7 +78,7 @@ export default function CategoryJoke() {
       />
       <div className="w-5/6 h-80">
         {clicked && categoryData && called ? (
-          <h1 className="text-2xl text-center text-black">{lastJoke}</h1>
+          <h1 className="text-2xl text-center">{lastJoke}</h1>
         ) : (
           <h1 className="text-2xl text-center">
             {categoryError?.graphQLErrors[0].message}

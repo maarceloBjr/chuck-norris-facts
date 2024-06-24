@@ -48,7 +48,7 @@ export default function SearchJoke() {
         {clicked && called && data ? (
           data.searchJokes && data.searchJokes.length > 0 ? (
             data.searchJokes.map((e: any, index: number) => (
-              <h1 key={index} className="text-sm text-center text-black my-2">
+              <h1 key={index} className="text-sm text-center my-2">
                 {e.value}
               </h1>
             ))

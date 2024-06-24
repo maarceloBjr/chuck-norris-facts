@@ -24,11 +24,11 @@ export default function RandomJoke() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-2xl text-center text-black">
+      <h1 className="text-2xl text-center">
         Random Chuck Norris Fact
       </h1>
       <div className="w-5/6 h-80">
-        <h1 className="text-2xl text-center text-black mt-12">
+        <h1 className="text-2xl text-center mt-12">
           {data.randomJoke.value}
         </h1>
       </div>
