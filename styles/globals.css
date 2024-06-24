@@ -6,7 +6,7 @@
 
   @layer base {
     .light {
-      --background: 32 97.7% 83.1%;
+      --background: 0 0% 100%;
       --foreground: 20 14.3% 4.1%;
       --card: 0 0% 100%;
       --card-foreground: 20 14.3% 4.1%;
