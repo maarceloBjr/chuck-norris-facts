@@ -1,3 +1,4 @@
+import { Error } from "@/components/custom/Error";
 import { Loading } from "@/components/custom/Loading";
 import { SelectCategory } from "@/components/custom/Select";
 import { Button } from "@/components/ui/button";
@@ -26,7 +27,7 @@ export default function CategoryJoke() {
     }
   `;
 
-  const { data, error, loading } = useQuery(JOKE_QUERY, {
+  const { data, error, loading, refetch } = useQuery(JOKE_QUERY, {
     notifyOnNetworkStatusChange: true,
   });
 
@@ -53,6 +54,9 @@ export default function CategoryJoke() {
 
   if (loading || categoryLoading) return <Loading />;
   if (called && categoryLoading) return <Loading />;
+
+  if (error)
+    return <Error errorMessage={error.message} refetch={refetch} />;
 
   const handleFirstClick = () => {
     fetchCategoryJokes({ variables: { category } });
