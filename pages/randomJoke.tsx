@@ -24,26 +24,27 @@ export default function RandomJoke() {
   if (error) return <Error errorMessage={error.message} refetch={refetch} />;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-2xl text-center">
+    <main className="flex min-h-screen flex-col items-center justify-between py-24 px-2">
+      <h1 className="sm:text-4xl text-center max-sm:text-2xl">
         Random Chuck Norris Fact
       </h1>
       <div className="w-5/6 h-80">
-        <h1 className="text-2xl text-center mt-12">
+        <h1 className="sm:text-2xl text-center mt-12 max-sm:text-xl">
           {data.randomJoke.value}
         </h1>
       </div>
-      <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 mb-0 space-x-4">
+      <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 space-x-4">
         <Button
           variant="secondary"
           onClick={() => {
             router.back();
             refetch();
           }}
+          className="max-sm:min-w-40"
         >
           Go back
         </Button>
-        <Button onClick={() => refetch()}>New random joke</Button>
+        <Button onClick={() => refetch()} className="max-sm:min-w-40">New random joke</Button>
       </div>
     </main>
   );

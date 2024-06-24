@@ -37,14 +37,14 @@ export default function SearchJoke() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-2xl text-center">Type a word to search for a joke</h1>
+    <main className="flex min-h-screen flex-col items-center justify-between py-24 px-2">
+      <h1 className="sm:text-4xl text-center max-sm:text-2xl">Type a word to search for a fact</h1>
       <Input
         placeholder="Type a word"
         onChange={(e) => {
           setQuery(e.target.value);
         }}
-        className="bg-secondary w-1/3"
+        className="bg-secondary sm:w-1/3 max-sm:w-2/3"
       />
       <div className="w-5/6 h-80 overflow-y-auto p-4 scrollbar-custom rounded-md">
         {clicked && called && data ? (
@@ -61,13 +61,14 @@ export default function SearchJoke() {
           </h1>
         )}
       </div>
-      <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 mb-0 space-x-4">
+      <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 space-x-4">
         <Button
           variant="secondary"
           onClick={() => {
             setClicked(false);
             router.back();
           }}
+          className="max-sm:min-w-40"
         >
           Go back
         </Button>
@@ -75,6 +76,7 @@ export default function SearchJoke() {
           onClick={() => {
             clicked ? handleMoreClicksSearch() : handleFirstClickSearch();
           }}
+          className="max-sm:min-w-40"
         >
           Search
         </Button>

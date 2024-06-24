@@ -68,9 +68,9 @@ export default function CategoryJoke() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-2xl text-center">
-        Select the category you want to see a joke from
+    <main className="flex min-h-screen flex-col items-center justify-between py-24 px-2">
+      <h1 className="sm:text-4xl text-center max-sm:text-2xl">
+        Select the category you want to see a fact from
       </h1>
       <SelectCategory
         allCategories={data.allCategories}
@@ -82,20 +82,21 @@ export default function CategoryJoke() {
       />
       <div className="w-5/6 h-80">
         {clicked && categoryData && called ? (
-          <h1 className="text-2xl text-center">{lastJoke}</h1>
+          <h1 className="sm:text-2xl text-center mt-12 max-sm:text-xl">{lastJoke}</h1>
         ) : (
-          <h1 className="text-2xl text-center">
+          <h1 className="sm:text-2xl text-center mt-12 max-sm:text-xl">
             {categoryError?.graphQLErrors[0].message}
           </h1>
         )}
       </div>
-      <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 mb-0 space-x-4">
+      <div className="grid-cols-2 grid mb-32 lg:max-w-96 lg:w-96 space-x-4">
         <Button
           variant="secondary"
           onClick={() => {
             setClicked(false);
             router.back();
           }}
+          className="max-sm:min-w-40"
         >
           Go back
         </Button>
@@ -103,6 +104,7 @@ export default function CategoryJoke() {
           onClick={() => {
             clicked ? handleMoreClicks() : handleFirstClick();
           }}
+          className="max-sm:min-w-40"
         >
           {clicked ? "New joke" : "Get joke"}
         </Button>
