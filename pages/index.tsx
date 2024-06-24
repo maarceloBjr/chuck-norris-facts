@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="">
         <h1 className="text-4xl text-center">
-          Chuck Norris doesn't welcome you.
+          Chuck Norris does not welcome you.
         </h1>
         <h1 className="text-4xl text-center">You welcome Chuck Norris.</h1>
         <h1 className="text-2xl text-center mt-10">
