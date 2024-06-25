@@ -25,7 +25,7 @@ export default function SearchJoke() {
 
   if (loading && !called) return <Loading />;
   if(networkStatus === NetworkStatus.refetch) return <Loading />;
-  if (error) return <Error errorMessage={error.message} refetch={refetch} />;
+  // if (error) return <Error errorMessage={error.message} refetch={refetch} />;
 
   const handleFirstClickSearch = () => {
     searchJoke({ variables: { query } });
@@ -57,7 +57,7 @@ export default function SearchJoke() {
           ) : null
         ) : (
           <h1 className="text-2xl text-center">
-            {/* {error?.graphQLErrors[0].message} */}
+            {error?.graphQLErrors[0].message}
           </h1>
         )}
       </div>

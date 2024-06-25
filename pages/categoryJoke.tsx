@@ -55,8 +55,8 @@ export default function CategoryJoke() {
   if (loading || categoryLoading) return <Loading />;
   if (called && categoryLoading) return <Loading />;
 
-  if (error)
-    return <Error errorMessage={error.message} refetch={refetch} />;
+  // if (error)
+  //   return <Error errorMessage={error.message} refetch={refetch} />;
 
   const handleFirstClick = () => {
     fetchCategoryJokes({ variables: { category } });
